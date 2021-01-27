@@ -61,7 +61,7 @@
             this.button2.Size = new System.Drawing.Size(108, 54);
             this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ExpandOrShrink);
             // 
             // FishyNote
             // 
@@ -79,6 +79,9 @@
             this.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
             this.Text = "FishyNote";
             this.Load += new System.EventHandler(this.FishyNote_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FishyNote_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

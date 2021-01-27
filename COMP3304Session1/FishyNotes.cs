@@ -12,9 +12,10 @@ namespace COMP3304Session1
 {
     public partial class FishyNotes : Form
     {
-        private Form _newNote;
-        public FishyNotes()
+        private IList<FishyNote> _noteList;
+        public FishyNotes(IList<FishyNote> pListOfNotes)
         {
+            _noteList = pListOfNotes;
             InitializeComponent();
         }
 
@@ -25,15 +26,14 @@ namespace COMP3304Session1
         //This class is for creating a new note. It will only create one note and it will only create it if it is not existant
         private void AddNote_Click(object sender, EventArgs e)
         {
-            //Check if note hasn't been created yet
-            if (_newNote == null)
+            //Create a new FishyNote
+            _noteList.Add(new FishyNote());
+            //Show it to the user
+            for (int i = 0; i < _noteList.Count; i++)
             {
-                //Store new note inside instanced container
-                _newNote = new FishyNote();
-                //Show it on the screen
-                _newNote.Show();
+                _noteList[i].Show();
             }
-            
+
         }
     }
 }
